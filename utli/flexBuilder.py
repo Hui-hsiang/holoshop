@@ -435,31 +435,11 @@ def productList(name, price, img, describe):
         "type": "box",
         "layout": "vertical",
         "spacing": "sm",
-        "contents": [
+        "contents":[
         {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-            "type": "uri",
-            "label": "CALL",
-            "uri": "https://linecorp.com"
-            }
-        },
-        {
-            "type": "button",
-            "style": "link",
-            "height": "sm",
-            "action": {
-            "type": "uri",
-            "label": "WEBSITE",
-            "uri": "https://linecorp.com"
-            }
-        },
-        {
-            "type": "spacer",
-            "size": "sm"
-        }
+        "type": "text",
+        "text": "hello, world"
+        }   
         ],
         "flex": 0
         },
