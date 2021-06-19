@@ -431,6 +431,12 @@ def productList(name, price, img, describe):
         }
         ]
         },
+        "styles": {
+            "footer": {
+            "separator": True
+            
+            }
+        },
         "footer": {
             "type": "box",
             "layout": "vertical",
@@ -442,7 +448,7 @@ def productList(name, price, img, describe):
                 "height": "sm",
                 "action": {
                 "type": "uri",
-                "label": "我要訂購",
+                "label": "立即下單",
                 "uri": "https://linecorp.com"
                 }
             },
