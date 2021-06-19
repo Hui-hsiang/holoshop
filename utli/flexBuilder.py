@@ -437,8 +437,14 @@ def productList(name, price, img, describe):
         "spacing": "sm",
         "contents":[
         {
-        "type": "text",
-        "text": "hello, world"
+            "type": "button",
+            "style": "link",
+            "height": "sm",
+            "action": {
+                "type": "uri",
+                "label": "CALL",
+                "uri": "https://linecorp.com"
+            }
         }   
         ],
         "flex": 0
