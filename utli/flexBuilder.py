@@ -431,6 +431,38 @@ def productList(name, price, img, describe):
         }
         ]
         },
+        "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "sm",
+            "contents": [
+            {
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                "type": "uri",
+                "label": "CALL",
+                "uri": "https://linecorp.com"
+                }
+            },
+            {
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                "type": "uri",
+                "label": "WEBSITE",
+                "uri": "https://linecorp.com"
+                }
+            },
+            {
+                "type": "spacer",
+                "size": "sm"
+            }
+            ],
+            "flex": 0
+        },
         "styles": {
             "footer": {
             "separator": True
