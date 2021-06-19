@@ -442,8 +442,8 @@ def productList(name, price, img, describe):
             "height": "sm",
             "action": {
                 "type": "uri",
-                "label": "CALL",
-                "uri": "https://linecorp.com"
+                "label": "立即訂購",
+                "uri": "https://forms.gle/npnde9J2Xwj59H5W9"
             }
         }   
         ],
