@@ -436,28 +436,6 @@ def productList(name, price, img, describe):
             "separator": True
             
             }
-        },
-        "footer": {
-            "type": "box",
-            "layout": "vertical",
-            "spacing": "sm",
-            "contents": [
-            {
-                "type": "button",
-                "style": "link",
-                "height": "sm",
-                "action": {
-                "type": "uri",
-                "label": "立即下單",
-                "uri": "https://linecorp.com"
-                }
-            },
-            {
-                "type": "spacer",
-                "size": "sm"
-            }
-            ],
-            "flex": 0
         }
     }
     return contents
