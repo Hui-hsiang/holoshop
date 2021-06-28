@@ -48,7 +48,7 @@ def handle_message(event):
     profile = line_bot_api.get_profile(event.source.user_id)
 
 
-    if (text == '商品目錄'):
+    if (text == '看看目錄'):
         contents = []
         products = list(db.getProductData().values())
         for product in products:
@@ -62,7 +62,7 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage('目前沒有商品...'))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage('請輸入\'商品目錄\'查看商品'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('請點選下方功能選單'))
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
