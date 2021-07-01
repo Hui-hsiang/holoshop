@@ -458,7 +458,7 @@ def productList(name, price, img, describe):
     }
     return contents
 
-def historyOrdersList(data):
+def historyOrdersList(data, state):
     contents ={
         "type": "bubble",
         "body": {
@@ -618,7 +618,7 @@ def historyOrdersList(data):
             },
             {
                 "type": "text",
-                "text": data['haveSend'],
+                "text": state,
                 "wrap": True,
                 "color": "#666666",
                 "size": "XL",

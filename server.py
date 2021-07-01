@@ -114,7 +114,10 @@ def handle_message(event):
         contents = []
         orders = list(db.getHisterOrder(text).values())
         for order in orders:
-            contents.append(flexBuilder.historyOrdersList(order))
+            if order['haveSend'] == '已出貨':
+                contents.append(flexBuilder.historyOrdersList(order, '已出貨'))
+            else:
+                contents.append(flexBuilder.historyOrdersList(order, '未出貨'))
         if len(contents) > 0:
             carouselContents = {
                 "type" : "carousel",
