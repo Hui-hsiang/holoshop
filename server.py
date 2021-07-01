@@ -61,6 +61,45 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, FlexSendMessage('商品目錄', carouselContents))
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage('目前沒有商品...'))
+    #todo
+    elif(text=="想下單"):
+        carousel_template_message = TemplateSendMessage(
+            alt_text='我想下單',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/DX0hJiE.png',
+                        title='我想下單',
+                        text='請點選想下單的品項類別',
+                        actions=[
+                            MessageAction(
+                                label = '何奶奶手工辣椒醬',
+                                text = '何奶奶手工蠟椒醬'
+                            ), 
+                            MessageAction(
+                                label = '小何私心推薦',
+                                text = '小何私心推薦'
+                            ),
+
+                        ]
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, carousel_template_message)
+    elif(text=='何奶奶手工辣椒醬'):
+        contents = []
+        products = list(db.getProductData().values())
+        for product in products:
+            contents.append(flexBuilder.productList(product['name'], product['price'], product['img'], product['describe']))
+        if len(contents) > 0:
+            carouselContents = {
+                "type" : "carousel",
+                "contents" : contents
+            }
+            line_bot_api.reply_message(event.reply_token, FlexSendMessage('商品目錄', carouselContents))
+    elif(text=='小何私心推薦'):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('目前還沒有商品上架'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage('請點選下方功能選單'))
 
