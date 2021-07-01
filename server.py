@@ -47,10 +47,10 @@ def handle_message(event):
     print(event)
     text = event.message.text
     profile = line_bot_api.get_profile(event.source.user_id)
-    doc = db.getUserData(event.source.userId)
+    doc = db.getUserData(event.source.user_id)
     if (doc == None):
-        db.newUserData(event.source.userId, profile)
-        doc = db.getUserData(event.source.userId)
+        db.newUserData(event.source.user_id, profile)
+        doc = db.getUserData(event.source.user_id)
     user = db.doc2User(doc)
     if user.state == states.START.value:
         if (text == '看看目錄'):
