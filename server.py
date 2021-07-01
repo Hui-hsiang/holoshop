@@ -74,7 +74,7 @@ def handle_message(event):
                         actions=[
                             MessageAction(
                                 label = '何奶奶手工辣椒醬',
-                                text = '何奶奶手工蠟椒醬'
+                                text = '何奶奶手工辣椒醬'
                             ), 
                             MessageAction(
                                 label = '小何私心推薦',
@@ -100,6 +100,19 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, FlexSendMessage('商品目錄', carouselContents))
     elif(text=='小何私心推薦'):
         line_bot_api.reply_message(event.reply_token, TextSendMessage('目前還沒有商品上架'))
+    elif(text=='訂單查詢'):
+        contents = []
+        orders = list(db.getHisterOrder().values())
+        for order in orders:
+            contents.append(flexBuilder.historyOrdersList(order))
+        if len(contents) > 0:
+            carouselContents = {
+                "type" : "carousel",
+                "contents" : contents
+            }
+            line_bot_api.reply_message(event.reply_token, FlexSendMessage('歷史訂單', carouselContents))
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage('目前查無您的訂單...'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage('請點選下方功能選單'))
 

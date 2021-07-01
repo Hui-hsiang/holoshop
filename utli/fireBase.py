@@ -53,6 +53,13 @@ class dataBase():
         doc = collection_ref.get()
         case = { el.id: el.to_dict() for el in doc }
         return case
+    def getHisterOrder(self,phone):
+        path = "product"
+        
+        collection_ref = self.db.collection(path).where(u'phone', u'==', phone)
+        doc = collection_ref.get()
+        case = { el.id: el.to_dict() for el in doc }
+        return case
 
     def deleteDB(self, path, id):
 

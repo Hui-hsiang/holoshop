@@ -457,3 +457,181 @@ def productList(name, price, img, describe):
         }
     }
     return contents
+
+def historyOrdersList(data):
+    contents ={
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "何奶奶手工辣椒醬",
+        "weight": "bold",
+        "size": "xl"
+      },
+      {
+        "type": "text",
+        "text": "下單日期:" + data['date'],
+        "color": "#44AA22",
+        "align": "start"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "訂購人",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": data['name'],
+                "wrap": True,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 6
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "寄送地址",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "wrap": True,
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": data['address'],
+                "wrap": True,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 6
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "手機號碼",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": data['phone'],
+                "wrap": True,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 6
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "email",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": data['phone'],
+                "wrap": True,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 6
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "數量",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 2
+              },
+              {
+                "type": "text",
+                "text": data['orderNumber'],
+                "wrap": True,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 6
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "spacer",
+        "size": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "訂單狀態",
+            "weight": "bold",
+            "size": "xl",
+            "flex": 3,
+            "wrap": True
+          },
+          {
+            "type": "text",
+            "text": "未出貨",
+            "wrap": True,
+            "color": "#666666",
+            "size": "XL",
+            "flex": 6
+          }
+        ]
+      }
+    ],
+    "flex": 0
+  }
+}
+    return contents
