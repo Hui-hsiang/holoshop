@@ -107,6 +107,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage('目前還沒有商品上架'))
         elif(text=='訂單查詢'):
             line_bot_api.reply_message(event.reply_token, TextSendMessage('請輸入手機號碼'))
+            user.state = states.GETORDER.value
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage('請點選下方功能選單'))
     elif user.state == states.GETORDER.value:
