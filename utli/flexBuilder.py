@@ -479,6 +479,29 @@ def historyOrdersList(data, state):
         },
         {
             "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+            {
+                "type": "text",
+                "text": "訂單狀態",
+                "weight": "bold",
+                "size": "xl",
+                "flex": 3,
+                "wrap": True
+            },
+            {
+                "type": "text",
+                "text": state,
+                "wrap": True,
+                "color": "#666666",
+                "size": "XL",
+                "flex": 6
+            }
+            ]
+        },
+        {
+            "type": "box",
             "layout": "vertical",
             "margin": "lg",
             "spacing": "sm",
@@ -597,37 +620,6 @@ def historyOrdersList(data, state):
             ]
         }
         ]
-    },
-    "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
-        "contents": [
-        {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-            {
-                "type": "text",
-                "text": "訂單狀態",
-                "weight": "bold",
-                "size": "xl",
-                "flex": 3,
-                "wrap": True
-            },
-            {
-                "type": "text",
-                "text": state,
-                "wrap": True,
-                "color": "#666666",
-                "size": "XL",
-                "flex": 6
-            }
-            ]
-        }
-        ],
-        "flex": 0
     }
 }
     return contents
