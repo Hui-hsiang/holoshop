@@ -604,10 +604,6 @@ def historyOrdersList(data):
         "spacing": "sm",
         "contents": [
         {
-            "type": "spacer",
-            "size": "sm"
-        },
-        {
             "type": "box",
             "layout": "baseline",
             "spacing": "sm",
@@ -622,7 +618,7 @@ def historyOrdersList(data):
             },
             {
                 "type": "text",
-                "text": "未出貨",
+                "text": data['haveSend'],
                 "wrap": True,
                 "color": "#666666",
                 "size": "XL",
