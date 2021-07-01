@@ -467,7 +467,7 @@ def historyOrdersList(data, state):
         "contents": [
         {
             "type": "text",
-            "text": "何奶奶手工辣椒醬",
+            "text": data['product'],
             "weight": "bold",
             "size": "xl"
         },
@@ -484,19 +484,11 @@ def historyOrdersList(data, state):
             "contents": [
             {
                 "type": "text",
-                "text": "訂單狀態",
+                "text": state,
                 "weight": "bold",
                 "size": "xl",
-                "flex": 3,
+                "flex": 4,
                 "wrap": True
-            },
-            {
-                "type": "text",
-                "text": state,
-                "wrap": True,
-                "color": "#666666",
-                "size": "XL",
-                "flex": 6
             }
             ]
         },

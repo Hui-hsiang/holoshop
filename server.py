@@ -67,7 +67,7 @@ def handle_message(event):
             else:
                 line_bot_api.reply_message(event.reply_token, TextSendMessage('目前沒有商品...'))
         #todo
-        elif(text=="想下單"):
+        elif(text=="我想訂購<3"):
             carousel_template_message = TemplateSendMessage(
                 alt_text='我想下單',
                 template=CarouselTemplate(
